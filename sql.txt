@@ -1,0 +1,13 @@
+-- Table: public.todos
+
+-- DROP TABLE public.todos;
+
+CREATE TABLE public.todos
+(
+    id bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
+    item text COLLATE pg_catalog."default" NOT NULL,
+    status text COLLATE pg_catalog."default",
+    logdate timestamp without time zone,
+    createdate timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT todos_pkey PRIMARY KEY (id)
+)
