@@ -96,7 +96,8 @@ func putHandler(c *fiber.Ctx, db *sql.DB) error {
 	olditem := c.Query("olditem")
 	newitem := c.Query("newitem")
 	db.Exec("UPDATE todos SET item=$1, Status=$3, logdate=now() WHERE item=$2", newitem, olditem, "Completed")
-	return c.Redirect("/")
+	//return c.Redirect("/")
+	return c.SendString("updated")
 }
 
 func deleteHandler(c *fiber.Ctx, db *sql.DB) error {

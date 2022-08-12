@@ -47,13 +47,13 @@
                {{range .Todos}}
                <div class="row px-3 align-items-center todo-item editing rounded">
                    <div class="col px-1 m-1 d-flex align-items-center">
-                       <input type="text" class="form-control form-control-lg border-0 edit-todo-input bg-transparent rounded px-3 d-none" readonly value="{{ .Item }}" title="{{ .Item }}" />
-                       <input  id="{{ .Item }}"  type="text" class="form-control form-control-lg border-0 edit-todo-input rounded px-3" value="{{ .Item }}" />
+                        <input type="text" class="form-control form-control-lg border-0 edit-todo-input bg-transparent rounded px-3 d-none" readonly value="{{ .Item }}" title="{{ .Item }}" />
+                        <input  id="{{ .Item }}"  type="text" class="form-control form-control-lg border-0 edit-todo-input rounded px-3" readonly value="{{ .Item }}" />
                    </div>
 
                    <div class="col px-1 m-1 d-flex align-items-center">
                         <input type="text" class="form-control form-control-lg border-0 edit-todo-input bg-transparent rounded px-3 d-none" readonly value="{{ .Status }}" title="{{ .Status }}" />
-                        <input  id="{{ .Status }}"  type="text" class="form-control form-control-lg border-0 edit-todo-input rounded px-3" value="{{ .Status }}" />
+                        <input  id="{{ .Status }}"  type="text" class="form-control form-control-lg border-0 edit-todo-input rounded px-3" readonly value="{{ .Status }}" />
                     </div>
 
                    <div class="col-auto m-1 p-0 px-3 d-none">
@@ -61,7 +61,7 @@
                    <div class="col-auto m-1 p-0 todo-actions">
                        <div class="row d-flex align-items-center justify-content-end">
                            <h5 class="m-0 p-0 px-2">
-                               <i onclick="updateDb('{{ .Item }}')" class="fa fa-pencil text-warning btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
+                               <i onclick="updateDb('{{ .Item }}','{{ .Status }}')" class="fa fa-check text-warning btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Edit todo"></i>
                            </h5>
                            <h5 class="m-0 p-0 px-2">
                                <i onclick="removeFromDb('{{ .Item }}')" class="fa fa-trash-o text-danger btn m-0 p-0" data-toggle="tooltip" data-placement="bottom" title="Delete todo"></i>
@@ -74,7 +74,7 @@
        </div>
    </div>
    </form>
-   <script src="index.js"></script>
+   <script src="/index.js"></script>
    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
